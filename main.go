@@ -105,10 +105,9 @@ func main() {
 		usage()
 		os.Exit(1)
 	}
-	searchStringArr := args[0:]
-	searchString := strings.Join(searchStringArr, " ")
-	searchString = strings.Replace(searchString, " ", "+", -1)
-	fmt.Println(searchString)
+	//searchStringArr :=
+	// takes command line args as []string and converts to url safe string
+	searchString := strings.Replace(strings.Join(args[0:], " "), " ", "+", -1)
 	resultCh := make(chan Result)
 	sites := 2
 	// 1377x
