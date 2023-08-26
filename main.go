@@ -102,7 +102,8 @@ func main() {
 
 	args := flag.Args()
 	if len(args) < 1 {
-		fmt.Println("Search String Missing!")
+		//fmt.Println("Search String Missing!")
+		usage()
 		os.Exit(1)
 	}
 	searchString := args[0]
