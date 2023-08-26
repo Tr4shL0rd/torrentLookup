@@ -102,11 +102,13 @@ func main() {
 
 	args := flag.Args()
 	if len(args) < 1 {
-		//fmt.Println("Search String Missing!")
 		usage()
 		os.Exit(1)
 	}
-	searchString := args[0]
+	searchStringArr := args[0:]
+	searchString := strings.Join(searchStringArr, " ")
+	searchString = strings.Replace(searchString, " ", "+", -1)
+	fmt.Println(searchString)
 	resultCh := make(chan Result)
 	sites := 2
 	// 1377x
